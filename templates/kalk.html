@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stili.css') }}">
+    <style>
+      input{
+ color: transparent;
+ text-shadow: 0 0 0 #000000;}
+ .otvet_okno {
+    width: 80%;
+    padding: 3vw;
+    margin-left: 9%;
+    background-color: antiquewhite;
+    font-size: 4vw;
+    border: #eec890 4px solid;
+    border-radius: 30px;
+    font-family: cursive;
+    top: -15vw;
+    position: absolute;
+    animation: ottv 1s forwards;
+ }
+ @keyframes ottv {
+    0% {top: -15vw}
+    100% {top: 40vw}
+ }
+ 
+    </style>
+</head>
+
+<body style="background: rgb(39, 39, 39);">
+    <input type="checkbox" id="nav-toggle" hidden>
+    <nav class="nav">
+        <br>
+        <label for="nav-toggle" class="nav-toggle" onclick></label>
+        <ul>
+            <li><a href="/Главная">Главная</a>
+                <li><a href="/Уравнения">Уравнения</a>
+                    <li><a href="/Обучение">Обучение</a>
+                        <li><a href="/Калькулятор">Калькулятор</a>
+                            <li><a href="https://vk.com/nikitiao1">ВК</a></li>
+        </ul>
+    </nav>
+    <div stile="display: flex; justify-content: center; align-items: center;">
+      <div style="position: relative; text-align: center; margin-top: 10%; font-size: 9vw; color: #fff; font-family: cursive;">
+        <form action="" method="post">
+          <input type="text" id="a" onkeydown="this.style.width = ((this.value.length) * 3 + 9) + 'vw'" maxlength="4" name="a" placeholder="{{a}}" style="font-size: 8vw; width: 10vw; border-radius: 20%; text-align: center; border: #1b1b1b 0.3vw solid; background-color: #d3d3d3; ">x²+<input type="text" id="b" onkeydown="this.style.width = ((this.value.length) * 3 + 9) + 'vw'" maxlength="4" name="b" placeholder="{{b}}" style="font-size: 8vw; width: 10vw; border-radius: 20%; text-align: center; border: #1b1b1b 0.3vw solid; background-color: #d3d3d3;">x+<input type="text" id="c" onkeydown="this.style.width = ((this.value.length) * 3 + 9) + 'vw'" maxlength="4" name="c" placeholder="{{c}}" style="font-size: 8vw; width: 10vw; border-radius: 20%; text-align: center; border: #1b1b1b 0.3vw solid; background-color: #d3d3d3;">=0
+          <div><button type="submit" style="font-size: 3vw; border: #1b1b1b 0.2vw solid; border-radius: 40px; width: 15vw; height: 5vw; font-family: cursive;" class="otpr">решить</button></div>
+        </form>
+        </div>
+      </div>
+  {% if fl %}
+    <div class="otvet_okno">
+      {% for i in otv %}
+      {{i}}
+      <br>
+      {% endfor %}
+    </div>
+  {% endif %}
+</body>
+</html>

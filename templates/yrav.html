@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <title>Уровень сложности</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stili.css') }}">
+  <style>
+    @keyframes knq {
+    0% {box-shadow: 0px 0px 15px 0.1vw rgb(128, 128, 128)}
+    50% {box-shadow: 0px 0px 10px 0.1vw rgb(180, 180, 180)}
+    100% {box-shadow: 0px 0px 15px 0.1vw rgb(128, 128, 128)}
+}
+.tablo {border: 3px solid rgb(185, 185, 185); padding: 50px; margin-top: 8%; border-radius: 15%; width: 80%; max-width: 320px;}
+.tablo:hover {animation: knq 3s linear infinite;}
+  </style>
+</head>
+<body style="background: rgb(39, 39, 39);">
+  <input type="checkbox" id="nav-toggle" hidden>
+  <nav class="nav">
+      <br>
+      <label for="nav-toggle" class="nav-toggle" onclick></label>
+      <ul>
+          <li><a href="/Главная">Главная</a>
+              <li><a href="/Уравнения">Уравнения</a>
+                  <li><a href="/Обучение">Обучение</a>
+                      <li><a href="/Калькулятор">Калькулятор</a>
+                          <li><a href="https://vk.com/nikitiao1">ВК</a></li>
+      </ul>
+  </nav>
+<br>
+<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+<div class="tablo">
+  <div style="text-align: center;"><a href="/Уравнения/Легкие" class="btn btn-oval">ЛЕГКИЕ</a></div>
+  <div style="text-align: center; margin-top: 25px;"><a href="/Уравнения/Нормальные" class="btn btn-oval2">НОРМАЛЬНЫЕ</a></div>
+  <div style="text-align: center; margin-top: 25px;"><a href="/Уравнения/Сложные" class="btn btn-oval3">СЛОЖНЫЕ</a></div>
+</div>
+</div>
+</body>
+</html> 
